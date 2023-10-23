@@ -1,0 +1,9 @@
+file_format: "1"
+id: cornetto
+name: Cornetto
+type: shield
+url: https://github.com/Machione/keeb
+requires: [pro_micro]
+features:
+  - keys
+  - encoder
