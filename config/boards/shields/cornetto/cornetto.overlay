@@ -27,7 +27,7 @@ RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4)                         RC(2,5) RC(2,6) 
         col-gpios
             = <&gpio0 9  GPIO_ACTIVE_HIGH>
             , <&gpio0 10 GPIO_ACTIVE_HIGH>
-            , <&gpio1 11 GPIO_ACTIVE_HIGH &gpio1 7  GPIO_ACTIVE_HIGH>
+            , <&gpio1 7  GPIO_ACTIVE_HIGH>
 	    , <&gpio1 13 GPIO_ACTIVE_HIGH>
 	    , <&gpio1 15 GPIO_ACTIVE_HIGH>
 	    , <&gpio0 24 GPIO_ACTIVE_HIGH>
