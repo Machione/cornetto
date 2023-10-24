@@ -50,7 +50,7 @@ RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4)                         RC(2,5) RC(2,6) 
         label = "LEFT_ENCODER";
         a-gpios = <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        resolution = <15>;
+        steps = <15>;
         status = "okay";
     };
 
@@ -59,7 +59,7 @@ RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4)                         RC(2,5) RC(2,6) 
         label = "RIGHT_ENCODER";
         a-gpios = <&gpio0 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&gpio0 8  (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        resolution = <24>;
+        steps = <24>;
         status = "okay";
     };
 
