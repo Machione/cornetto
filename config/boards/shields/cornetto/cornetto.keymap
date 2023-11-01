@@ -22,7 +22,7 @@
         numbers {
             bindings = <
   &kp F1       &kp F2           &kp F3           &kp F4         &kp F5       &kp F6      &kp F7     &kp F8       &kp F9       &kp F10
-  &kp KP_N1    &kp KP_N2        &kp KP_N3        &kp KP_N4      &kp KP_N5    &kp KP_N6   &kp KP_N7  &kp KP_N8    &kp KP_N9 i  &kp KP_N0
+  &kp KP_N1    &kp KP_N2        &kp KP_N3        &kp KP_N4      &kp KP_N5    &kp KP_N6   &kp KP_N7  &kp KP_N8    &kp KP_N9    &kp KP_N0
   &kp KP_PLUS  &kp KP_SUBTRACT  &kp KP_MULTIPLY  &kp KP_DIVIDE  &kp EQUAL    &kp KP_DOT  &kp CARET  &kp PERCENT  &kp F11      &kp F12
                &trans           &trans           &trans         &trans       &trans      &trans     &trans       &trans
             >;
