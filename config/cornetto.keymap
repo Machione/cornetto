@@ -15,10 +15,10 @@
 
         workman {
             bindings = <
-&kp Q  &kp D                &kp R                  &kp W                    &kp B   &kp J    &kp F            &kp U        &kp P             &kp SEMICOLON
-&kp A  &kp S                &kp H                  &kp T                    &kp G   &kp Y    &kp N            &kp E        &kp O             &kp I
-&kp Z  &kp X                &kp M                  &kp C                    &kp V   &kp K    &kp L            &kp COMMA    &kp DOT           &kp FSLH
-       &mt LEFT_GUI KP_DOT  &mt LEFT_SHIFT RETURN  &mt LEFT_CONTROL DELETE  &tog 3  &kp ESC  &lt 1 BACKSPACE  &lt 2 SPACE  &mt LEFT_ALT TAB
+&kp Q  &kp D             &kp R            &kp W                 &kp B  &kp J  &kp F         &kp U                 &kp P                &kp SEMICOLON
+&kp A  &kp S             &kp H            &kp T                 &kp G  &kp Y  &kp N         &kp E                 &kp O                &kp I
+&kp Z  &kp X             &kp M            &kp C                 &kp V  &kp K  &kp L         &kp COMMA             &kp DOT              &kp SLASH
+       &mt LEFT_GUI ESC  &lt 1 BACKSPACE  &mt LEFT_CONTROL TAB  &none  &none  &lt 2 RETURN  &mt LEFT_SHIFT SPACE  &mt LEFT_ALT DELETE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PAGE_UP PAGE_DOWN>;
