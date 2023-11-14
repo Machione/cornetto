@@ -1,5 +1,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/mouse.h>
 
 &lt {
     tapping-term-ms = <150>;
@@ -21,7 +22,7 @@
        &mt LEFT_GUI ESC  &lt 1 BACKSPACE  &mt LEFT_CONTROL TAB  &none  &none  &lt 2 RETURN  &mt LEFT_SHIFT SPACE  &mt LEFT_ALT DELETE
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PAGE_UP PAGE_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_mwh SCROLL_UP SCROLL_DOWN>;
             
             label = "workman";
         };
