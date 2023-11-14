@@ -3,6 +3,16 @@
 #include <dt-bindings/zmk/mouse.h>
 
 / {
+    
+    behaviors {
+        rot_mwh: behavior_sensor_rotate_kp {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            label = "ENC_KP";
+            #sensor-binding-cells = <2>;
+            bindings = <&mwh>, <&mwh>;
+        };
+    };
+    
     keymap {
         compatible = "zmk,keymap";
 
@@ -14,7 +24,7 @@
          &kp DOT  &kp RET   &kp DEL   &kp ESC   &kp SQT   &kp BSPC  &kp SPACE &kp TAB
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_mwh SCROLL_UP SCROLL_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &rot_mwh SCROLL_UP SCROLL_DOWN>;
         };
     };
 };

@@ -9,8 +9,17 @@
     tapping-term-ms = <150>;
 };
 
-
 / {
+    
+    behaviors {
+        rot_mwh: behavior_sensor_rotate_kp {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            label = "ENC_KP";
+            #sensor-binding-cells = <2>;
+            bindings = <&mwh>, <&mwh>;
+        };
+    };
+    
     keymap {
         compatible = "zmk,keymap";
 
@@ -22,7 +31,7 @@
        &mt LEFT_GUI ESC  &lt 1 BACKSPACE  &mt LEFT_CONTROL TAB  &none  &none  &lt 2 RETURN  &mt LEFT_SHIFT SPACE  &mt LEFT_ALT DELETE
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_mwh SCROLL_UP SCROLL_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &rot_mwh SCROLL_UP SCROLL_DOWN>;
             
             label = "workman";
         };
