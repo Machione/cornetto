@@ -18,13 +18,37 @@
 
         default_layer {
             bindings = <
-&kp Q    &kp W    &kp E     &kp R     &kp T     &kp Y     &kp U     &kp I     &kp O     &kp P 
-&kp A    &kp S    &kp D     &kp F     &kp G     &kp H     &kp J     &kp K     &kp L     &kp SEMI
-&kp Z    &kp X    &kp C     &kp V     &kp B     &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH
-         &kp DOT  &kp RET   &kp DEL   &kp ESC   &kp SQT   &kp BSPC  &kp SPACE &kp TAB
+&kp Q    &kp W             &kp E            &kp R                 &kp T  &kp Y  &kp U         &kp I                 &kp O                &kp P 
+&kp A    &kp S             &kp D            &kp F                 &kp G  &kp H  &kp J         &kp K                 &kp L                &kp SEMI
+&kp Z    &kp X             &kp C            &kp V                 &kp B  &kp N  &kp M         &kp COMMA             &kp DOT              &kp SLASH
+         &mt LEFT_GUI ESC  &lt 1 BACKSPACE  &mt LEFT_CONTROL TAB  &none  &none  &lt 2 RETURN  &mt LEFT_SHIFT SPACE  &mt LEFT_ALT DELETE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &rot_mwh SCROLL_UP SCROLL_DOWN>;
+            
+            label = "qwerty";
+        };
+        
+        numbers {
+            bindings = <
+&kp F1     &kp F2       &kp F3    &kp F4     &kp F5   &kp F6     &kp F7        &kp F8     &kp F9   &kp F10
+&kp N1     &kp N2       &kp N3    &kp N4     &kp N5   &kp N6     &kp N7        &kp N8     &kp N9   &kp N0
+&kp CARET  &kp PERCENT  &kp PLUS  &kp MINUS  &kp DOT  &kp EQUAL  &kp ASTERISK  &kp SLASH  &kp F11  &kp F12
+           &none        &none     &none      &none    &none      &none         &none      &none
+            >;
+            
+            label = "numbers";
+        };
+
+        symbols {
+            bindings = <
+&kp NON_US_BACKSLASH  &kp PIPE2         &kp LS(SINGLE_QUOTE)  &kp BACKSLASH          &kp PIPE           &kp PLUS         &kp EQUAL       &kp UNDERSCORE  &kp LS(N3)    &kp DOLLAR
+&kp AMPERSAND         &kp EXCLAMATION   &kp MINUS             &kp LEFT_PARENTHESIS   &kp LEFT_BRACKET   &kp LEFT_BRACE   &kp LEFT_ARROW  &kp DOWN        &kp UP_ARROW  &kp RIGHT_ARROW
+&kp GRAVE             &kp SINGLE_QUOTE  &kp LS(N2)            &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &kp PERCENT     &kp CARET       &kp ASTERISK  &kp SLASH
+                      &none             &none                 &none                  &none              &none            &none           &none           &none
+            >;
+            
+            label = "symbols";
         };
     };
 };
