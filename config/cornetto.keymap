@@ -1,5 +1,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/mouse.h>
 
 &lt {
@@ -25,10 +26,10 @@
 
         workman {
             bindings = <
-&kp Q  &kp D             &kp R            &kp W                 &kp B  &kp J  &kp F         &kp U                 &kp P                &kp SEMICOLON
-&kp A  &kp S             &kp H            &kp T                 &kp G  &kp Y  &kp N         &kp E                 &kp O                &kp I
-&kp Z  &kp X             &kp M            &kp C                 &kp V  &kp K  &kp L         &kp COMMA             &kp DOT              &kp SLASH
-       &mt LEFT_GUI ESC  &lt 1 BACKSPACE  &mt LEFT_CONTROL TAB  &none  &none  &lt 2 RETURN  &mt LEFT_SHIFT SPACE  &mt LEFT_ALT DELETE
+&kp Q  &kp D             &kp R            &kp W                 &kp B            &kp J          &kp F         &kp U                 &kp P                &kp SEMICOLON
+&kp A  &kp S             &kp H            &kp T                 &kp G            &kp Y          &kp N         &kp E                 &kp O                &kp I
+&kp Z  &kp X             &kp M            &kp C                 &kp V            &kp K          &kp L         &kp COMMA             &kp DOT              &kp SLASH
+       &mt LEFT_GUI ESC  &lt 1 BACKSPACE  &mt LEFT_CONTROL TAB  &lt 3 LC(LS(M))  &lt 3 LA(TAB)  &lt 2 RETURN  &mt LEFT_SHIFT SPACE  &mt LEFT_ALT DELETE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &rot_mwh SCROLL_UP SCROLL_DOWN>;
@@ -56,6 +57,19 @@
             >;
             
             label = "symbols";
+        };
+
+        admin {
+            bindings = <
+&bt BT_CLR  &none  &none       &none    &none  &none  &none  &none  &none  &none
+&none       &none  &bt BT_PRV  &BT_NXT  &none  &none  &none  &none  &none  &none
+&none       &none  &none       &none    &none  &none  &none  &none  &none  &none
+            &none  &none       &none    &none  &none  &none  &none  &none  &none
+            >;
+            
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &rot_mwh SCROLL_RIGHT SCROLL_LEFT>;
+            
+            label = "admin";
         };
     };
 };
