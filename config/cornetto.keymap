@@ -61,10 +61,10 @@
 
         admin {
             bindings = <
-&bt BT_CLR  &none  &none       &none    &none  &none  &none  &none  &none  &none
-&none       &none  &bt BT_PRV  &BT_NXT  &none  &none  &none  &none  &none  &none
-&none       &none  &none       &none    &none  &none  &none  &none  &none  &none
-            &none  &none       &none    &none  &none  &none  &none  &none  &none
+&bt BT_CLR  &none  &none       &none       &none  &none  &none  &none  &none  &none
+&none       &none  &bt BT_PRV  &bt BT_NXT  &none  &none  &none  &none  &none  &none
+&none       &none  &none       &none       &none  &none  &none  &none  &none  &none
+            &none  &none       &none       &none  &none  &none  &none  &none  &none
             >;
             
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &rot_mwh SCROLL_RIGHT SCROLL_LEFT>;
