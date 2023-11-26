@@ -67,7 +67,7 @@
             &none  &none       &none       &none  &none  &none  &none  &none  &none
             >;
             
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &rot_mwh SCROLL_RIGHT SCROLL_LEFT>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &rot_mwh SCROLL_RIGHT SCROLL_LEFT>;
             
             label = "admin";
         };
