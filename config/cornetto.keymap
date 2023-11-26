@@ -12,15 +12,6 @@
 
 / {
     
-    behaviors {
-        rot_mwh: behavior_sensor_rotate_kp {
-            compatible = "zmk,behavior-sensor-rotate-var";
-            label = "ENC_KP";
-            #sensor-binding-cells = <2>;
-            bindings = <&kp>, <&kp>;
-        };
-    };
-    
     keymap {
         compatible = "zmk,keymap";
 
@@ -32,7 +23,7 @@
        &mt LEFT_GUI ESC  &lt 1 BACKSPACE  &mt LEFT_CONTROL TAB  &lt 3 LC(LS(M))  &lt 3 LA(TAB)  &lt 2 RETURN  &mt LEFT_SHIFT SPACE  &mt LEFT_ALT DELETE
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &rot_mwh A B>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_mwh SCROLL_UP SCROLL_DOWN>;
             
             label = "workman";
         };
