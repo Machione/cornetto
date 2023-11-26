@@ -39,7 +39,7 @@
        &mt LEFT_GUI ESC  &lt 1 BACKSPACE  &mt LEFT_CONTROL TAB  &lt 3 LC(LS(M))  &lt 3 LA(TAB)  &lt 2 RETURN  &mt LEFT_SHIFT SPACE  &mt LEFT_ALT DELETE
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &mouse_wheel_v>;
+            sensor-bindings = <&mouse_wheel_h &mouse_wheel_v>;
             
             label = "workman";
         };
