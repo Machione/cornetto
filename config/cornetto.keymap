@@ -19,6 +19,13 @@
             #sensor-binding-cells = <0>;
             bindings = <&mwh SCROLL_UP>, <&mwh SCROLL_DOWN>;
         };
+        
+        mouse_wheel_h: mouse_wheel_h {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "MOUSE_WHEEL";
+            #sensor-binding-cells = <0>;
+            bindings = <&mwh SCROLL_LEFT>, <&mwh SCROLL_RIGHT>;   
+        };
     };
     
     keymap {
@@ -67,7 +74,7 @@
             &none  &none       &none       &none  &none  &none  &none  &none  &none
             >;
             
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &rot_mwh SCROLL_RIGHT SCROLL_LEFT>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &mouse_wheel_h>;
             
             label = "admin";
         };
