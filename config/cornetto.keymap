@@ -40,8 +40,8 @@
             compatible = "zmk,behavior-sensor-rotate";
             label = "TEST";
             #sensor-binding-cells = <0>;
-            bindings = <&kp U>, <&kp D>
-        }
+            bindings = <&kp U>, <&kp D>;
+        };
     };
     
     keymap {
