@@ -26,7 +26,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             label = "MOUSE_WHEEL";
             #sensor-binding-cells = <0>;
-            bindings = <&mwh SCROLL_UP>, <&mwh SCROLL_DOWN>;
+            bindings = <&kp U>, <&kp D>;
         };
         
         mouse_wheel_h: mouse_wheel_h {
@@ -58,6 +58,7 @@
 &kp GRAVE             &kp SINGLE_QUOTE  &kp LS(N2)            &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &kp PERCENT     &kp CARET       &kp ASTERISK  &kp SLASH
                       &none             &none                 &none                  &none              &none            &none           &none           &none
             >;
+            sensor-bindings = <&inc_dec_kp U D &mouse_wheel_h>;
         };
 
         numbers {
