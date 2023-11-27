@@ -26,15 +26,22 @@
             compatible = "zmk,behavior-sensor-rotate";
             label = "MOUSE_WHEEL";
             #sensor-binding-cells = <0>;
-            bindings = <&kp U>, <&kp D>;
+            bindings = <&mwh SCROLL_UP>, <&mwh SCROLL_DOWN>;
         };
         
         mouse_wheel_h: mouse_wheel_h {
             compatible = "zmk,behavior-sensor-rotate";
             label = "MOUSE_WHEEL";
             #sensor-binding-cells = <0>;
-            bindings = <&mwh SCROLL_UP>, <&mwh SCROLL_DOWN>;   
+            bindings = <&mwh SCROLL_LEFT>, <&mwh SCROLL_RIGHT>;   
         };
+        
+        test_behavior: test_behavior {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "TEST";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp U>, <&kp D>
+        }
     };
     
     keymap {
@@ -43,8 +50,8 @@
         workman {
             bindings = <
 &kp Q  &kp D             &kp R                  &kp W                 &kp B                &kp J              &kp F               &kp U                 &kp P                &kp SEMICOLON
-&kp A  &kp S             &kp H                  &kp T                 &kp G                &kp Y              &mwh SCROLL_UP      &kp E                 &kp O                &kp I
-&kp Z  &kp X             &kp M                  &kp C                 &kp V                &kp K              &mwh SCROLL_DOWN    &kp COMMA             &kp DOT              &kp SLASH
+&kp A  &kp S             &kp H                  &kp T                 &kp G                &kp Y              &kp N               &kp E                 &kp O                &kp I
+&kp Z  &kp X             &kp M                  &kp C                 &kp V                &kp K              &kp L               &kp COMMA             &kp DOT              &kp SLASH
        &mt LEFT_GUI ESC  &lt SYMBOLS BACKSPACE  &mt LEFT_CONTROL TAB  &lt ADMIN LC(LS(M))  &lt ADMIN LA(TAB)  &lt NUMBERS RETURN  &mt LEFT_SHIFT SPACE  &mt LEFT_ALT DELETE
             >;
 
@@ -58,7 +65,6 @@
 &kp GRAVE             &kp SINGLE_QUOTE  &kp LS(N2)            &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &kp PERCENT     &kp CARET       &kp ASTERISK  &kp SLASH
                       &none             &none                 &none                  &none              &none            &none           &none           &none
             >;
-            sensor-bindings = <&inc_dec_kp U D &mouse_wheel_h>;
         };
 
         numbers {
@@ -72,13 +78,13 @@
 
         admin {
             bindings = <
-&bt BT_CLR  &none  &none       &none       &none  &none  &none  &none  &none  &none
-&none       &none  &bt BT_PRV  &bt BT_NXT  &none  &none  &none  &none  &none  &none
-&none       &none  &none       &none       &none  &none  &none  &none  &none  &none
-            &none  &none       &none       &none  &none  &none  &none  &none  &none
+&bt BT_CLR  &none  &none       &none       &none  &none             &none             &none           &none             &none
+&none       &none  &bt BT_PRV  &bt BT_NXT  &none  &mwh SCROLL_LEFT  &mwh SCROLL_DOWN  &mwh SCROLL_UP  &mwh SCROLL_DOWN  &mwh SCROLL_RIGHT
+&none       &none  &none       &none       &none  &none             &none             &none           &none             &none
+            &none  &none       &none       &none  &none             &none             &none           &none             &none
             >;
             
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &mouse_wheel_h>;
+            sensor-bindings = <&test_behavior &inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
     };
 };
