@@ -48,7 +48,7 @@
        &mt LEFT_GUI ESC  &lt SYMBOLS BACKSPACE  &mt LEFT_CONTROL TAB  &lt ADMIN LC(LS(M))  &lt ADMIN LA(TAB)  &lt NUMBERS RETURN  &mt LEFT_SHIFT SPACE  &mt LEFT_ALT DELETE
             >;
 
-            sensor-bindings = <&mouse_wheel SCROLL_HOR(-600) SCROLL_HOR(300) &mouse_wheel SCROLL_VERT(600) SCROLL_VERT(-300)>;
+            sensor-bindings = <&mouse_wheel SCROLL_VERT(-600) SCROLL_VERT(300) &mouse_wheel SCROLL_HOR(600) SCROLL_HOR(-300)>;
         };
 
         symbols {
