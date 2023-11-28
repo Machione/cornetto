@@ -26,7 +26,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             label = "MOUSE_WHEEL_V";
             #sensor-binding-cells = <0>;
-            bindings = <&mwh SCROLL_UP>, <&mwh SCROLL_DOWN>;
+            bindings = <&mwh SCROLL_VERT(100)>, <&mwh SCROLL_VERT(-100)>;
         };
         
         mouse_wheel_h: mouse_wheel_h {
