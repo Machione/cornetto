@@ -8,25 +8,27 @@
 #define NUMBERS 2
 #define ADMIN   3
 
-#define U_MOUSE_SCROLL_MAX 100
+#define MOUSE_SCROLL_MAX 100
 
 #undef SCROLL_UP
 #undef SCROLL_DOWN
 #undef SCROLL_LEFT
 #undef SCROLL_RIGHT
-#define SCROLL_UP SCROLL_VERT(U_MOUSE_SCROLL_MAX)
-#define SCROLL_DOWN SCROLL_VERT(-U_MOUSE_SCROLL_MAX)
-#define SCROLL_LEFT SCROLL_HOR(-U_MOUSE_SCROLL_MAX)
-#define SCROLL_RIGHT SCROLL_HOR(U_MOUSE_SCROLL_MAX)
+#define SCROLL_UP SCROLL_VERT(MOUSE_SCROLL_MAX)
+#define SCROLL_DOWN SCROLL_VERT(-MOUSE_SCROLL_MAX)
+#define SCROLL_LEFT SCROLL_HOR(-MOUSE_SCROLL_MAX)
+#define SCROLL_RIGHT SCROLL_HOR(MOUSE_SCROLL_MAX)
+
 
 &mwh {
-  time-to-max-speed-ms = <500>;
+    time-to-max-speed-ms = <500>;
 };
 
 &lt {
     tapping-term-ms = <150>;
     quick-tap-ms = <150>;
 };
+
 &mt {
     tapping-term-ms = <150>;
     quick-tap-ms = <150>;
@@ -36,19 +38,50 @@
 
 / {
     
+    macros {
+        ms_up: ms_up {
+            label = "MOUSE_SCROLL_UP";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <20>;
+            bindings = <&mwh SCROLL_UP>;
+        };
+        ms_down: ms_down {
+            label = "MOUSE_SCROLL_DOWN";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <20>;
+            bindings = <&mwh SCROLL_DOWN>;
+        };
+        ms_left: ms_left {
+            label = "MOUSE_SCROLL_LEFT";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <20>;
+            bindings = <&mwh SCROLL_LEFT>;
+        };
+        ms_right: ms_right {
+            label = "MOUSE_SCROLL_RIGHT";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            tap-ms = <20>;
+            bindings = <&mwh SCROLL_RIGHT>;
+        };
+    };
+    
     behaviors {
-        mouse_wheel: mouse_wheel {
+        mouse_wheel_vert: mouse_wheel_vert {
             compatible = "zmk,behavior-sensor-rotate-var";
             label = "MOUSE_WHEEL";
-            #sensor-binding-cells = <2>;
-            bindings = <&mwh>, <&mwh>;
+            #sensor-binding-cells = <0>;
+            bindings = <&ms_up>, <&ms_down>;
         };
         
-        test_behavior: test_behavior {
-            compatible = "zmk,behavior-sensor-rotate";
-            label = "TEST";
+        mouse_wheel_hor: mouse_wheel_hor {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            label = "MOUSE_WHEEL";
             #sensor-binding-cells = <0>;
-            bindings = <&kp U>, <&kp D>;
+            bindings = <&ms_left>, <&ms_right>;
         };
     };
     
@@ -63,7 +96,7 @@
        &mt LEFT_GUI ESC  &lt SYMBOLS BACKSPACE  &mt LEFT_CONTROL TAB  &lt ADMIN LC(LS(M))  &lt ADMIN LA(TAB)  &lt NUMBERS RETURN  &mt LEFT_SHIFT SPACE  &mt LEFT_ALT DELETE
             >;
 
-            sensor-bindings = <&mouse_wheel SCROLL_UP SCROLL_DOWN &mouse_wheel SCROLL_LEFT SCROLL_RIGHT>;
+            sensor-bindings = <&mouse_wheel_vert &mouse_wheel_hor>;
         };
 
         symbols {
