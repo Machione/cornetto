@@ -21,7 +21,7 @@
 
 
 &mwh {
-    time-to-max-speed-ms = <500>;
+    time-to-max-speed-ms = <1000>;
 };
 
 &lt {
@@ -38,50 +38,12 @@
 
 / {
     
-    macros {
-        ms_up: ms_up {
-            label = "MOUSE_SCROLL_UP";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            tap-ms = <100>;
-            bindings = <&mwh SCROLL_UP>;
-        };
-        ms_down: ms_down {
-            label = "MOUSE_SCROLL_DOWN";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            tap-ms = <100>;
-            bindings = <&mwh SCROLL_DOWN>;
-        };
-        ms_left: ms_left {
-            label = "MOUSE_SCROLL_LEFT";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            tap-ms = <100>;
-            bindings = <&mwh SCROLL_LEFT>;
-        };
-        ms_right: ms_right {
-            label = "MOUSE_SCROLL_RIGHT";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            tap-ms = <100>;
-            bindings = <&mwh SCROLL_RIGHT>;
-        };
-    };
-    
     behaviors {
-        mouse_wheel_vert: mouse_wheel_vert {
-            compatible = "zmk,behavior-sensor-rotate";
-            label = "MOUSE_WHEEL_VERT";
-            #sensor-binding-cells = <0>;
-            bindings = <&ms_up>, <&ms_down>;
-        };
-        
-        mouse_wheel_hor: mouse_wheel_hor {
-            compatible = "zmk,behavior-sensor-rotate";
-            label = "MOUSE_WHEEL_HOR";
-            #sensor-binding-cells = <0>;
-            bindings = <&ms_left>, <&ms_right>;
+        mouse_wheel: mouse_wheel {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            label = "MOUSE_WHEEL";
+            #sensor-binding-cells = <2>;
+            bindings = <&mwh>, <&mwh>;
         };
     };
     
@@ -96,7 +58,7 @@
        &mt LEFT_GUI ESC  &lt SYMBOLS BACKSPACE  &mt LEFT_CONTROL TAB  &lt ADMIN LC(LS(M))  &lt ADMIN LA(TAB)  &lt NUMBERS RETURN  &mt LEFT_SHIFT SPACE  &mt LEFT_ALT DELETE
             >;
 
-            sensor-bindings = <&mouse_wheel_vert &mouse_wheel_hor>;
+            sensor-bindings = <&mouse_wheel SCROLL_LEFT SCROLL_RIGHT &mouse_wheel SCROLL_UP SCROLL_DOWN>;
         };
 
         symbols {
