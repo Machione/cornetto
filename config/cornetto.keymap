@@ -24,14 +24,14 @@
     behaviors {
         mouse_wheel_v: mouse_wheel_v {
             compatible = "zmk,behavior-sensor-rotate";
-            label = "MOUSE_WHEEL";
+            label = "MOUSE_WHEEL_V";
             #sensor-binding-cells = <0>;
             bindings = <&mwh SCROLL_UP>, <&mwh SCROLL_DOWN>;
         };
         
         mouse_wheel_h: mouse_wheel_h {
             compatible = "zmk,behavior-sensor-rotate";
-            label = "MOUSE_WHEEL";
+            label = "MOUSE_WHEEL_H";
             #sensor-binding-cells = <0>;
             bindings = <&mwh SCROLL_LEFT>, <&mwh SCROLL_RIGHT>;   
         };
