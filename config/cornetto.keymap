@@ -8,6 +8,20 @@
 #define NUMBERS 2
 #define ADMIN   3
 
+#define U_MOUSE_SCROLL_MAX 100
+
+#undef SCROLL_UP
+#undef SCROLL_DOWN
+#undef SCROLL_LEFT
+#undef SCROLL_RIGHT
+#define SCROLL_UP SCROLL_VERT(U_MOUSE_SCROLL_MAX)
+#define SCROLL_DOWN SCROLL_VERT(-U_MOUSE_SCROLL_MAX)
+#define SCROLL_LEFT SCROLL_HOR(-U_MOUSE_SCROLL_MAX)
+#define SCROLL_RIGHT SCROLL_HOR(U_MOUSE_SCROLL_MAX)
+
+&mwh {
+  time-to-max-speed-ms = <500>;
+};
 
 &lt {
     tapping-term-ms = <150>;
@@ -18,6 +32,7 @@
     quick-tap-ms = <150>;
     flavor = "tap-preferred";
 };
+
 
 / {
     
@@ -48,7 +63,7 @@
        &mt LEFT_GUI ESC  &lt SYMBOLS BACKSPACE  &mt LEFT_CONTROL TAB  &lt ADMIN LC(LS(M))  &lt ADMIN LA(TAB)  &lt NUMBERS RETURN  &mt LEFT_SHIFT SPACE  &mt LEFT_ALT DELETE
             >;
 
-            sensor-bindings = <&mouse_wheel SCROLL_VERT(-600) SCROLL_VERT(300) &mouse_wheel SCROLL_HOR(600) SCROLL_HOR(-300)>;
+            sensor-bindings = <&mouse_wheel SCROLL_UP SCROLL_DOWN &mouse_wheel SCROLL_LEFT SCROLL_RIGHT>;
         };
 
         symbols {
