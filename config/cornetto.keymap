@@ -22,18 +22,11 @@
 / {
     
     behaviors {
-        mouse_wheel_v: mouse_wheel_v {
-            compatible = "zmk,behavior-sensor-rotate";
-            label = "MOUSE_WHEEL_V";
-            #sensor-binding-cells = <0>;
-            bindings = <&mwh SCROLL_VERT(600)>, <&mwh SCROLL_VERT(-600)>;
-        };
-        
-        mouse_wheel_h: mouse_wheel_h {
-            compatible = "zmk,behavior-sensor-rotate";
-            label = "MOUSE_WHEEL_H";
-            #sensor-binding-cells = <0>;
-            bindings = <&mwh SCROLL_HOR(-600)>, <&mwh SCROLL_HOR(600)>;   
+        mouse_wheel: mouse_wheel {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            label = "MOUSE_WHEEL";
+            #sensor-binding-cells = <2>;
+            bindings = <&mwh>, <&mwh>;
         };
         
         test_behavior: test_behavior {
@@ -55,7 +48,7 @@
        &mt LEFT_GUI ESC  &lt SYMBOLS BACKSPACE  &mt LEFT_CONTROL TAB  &lt ADMIN LC(LS(M))  &lt ADMIN LA(TAB)  &lt NUMBERS RETURN  &mt LEFT_SHIFT SPACE  &mt LEFT_ALT DELETE
             >;
 
-            sensor-bindings = <&mouse_wheel_h &mouse_wheel_v>;
+            sensor-bindings = <&mouse_wheel SCROLL_HOR(-600) SCROLL_HOR(300) &mouse_wheel SCROLL_VERT(600) SCROLL_VERT(-300)>;
         };
 
         symbols {
