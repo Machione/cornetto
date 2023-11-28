@@ -71,15 +71,15 @@
     
     behaviors {
         mouse_wheel_vert: mouse_wheel_vert {
-            compatible = "zmk,behavior-sensor-rotate-var";
-            label = "MOUSE_WHEEL";
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "MOUSE_WHEEL_VERT";
             #sensor-binding-cells = <0>;
             bindings = <&ms_up>, <&ms_down>;
         };
         
         mouse_wheel_hor: mouse_wheel_hor {
-            compatible = "zmk,behavior-sensor-rotate-var";
-            label = "MOUSE_WHEEL";
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "MOUSE_WHEEL_HOR";
             #sensor-binding-cells = <0>;
             bindings = <&ms_left>, <&ms_right>;
         };
