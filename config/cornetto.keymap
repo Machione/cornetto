@@ -125,7 +125,7 @@
             &none  &none       &none       &none  &none             &none             &none           &none             &none
             >;
             
-            sensor-bindings = <&test_behavior &inc_dec_kp C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
     };
 };
