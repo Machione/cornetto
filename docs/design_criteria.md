@@ -1,5 +1,7 @@
 # Design Criteria
 
+Although I really enjoyed my [Corne keyboard](https://github.com/foostan/crkbd/tree/main) for several years, I always had a desire to build a totally custom board tailored to my specific typing style and posture.
+
 - **Rugged**: My Corne has a standard "case" made up of a sandwich of acrylic layers. Even still, breakages did happen when transporting the keyboard in a backpack.
 - **Wireless**: While I'm aware that it's possible to build a wireless Corne, it involves two small batteries which I imagine are hard to keep charged. A wireless board greatly aids the transportability and utility since it's easy to pair with a multitude of devices (tablet, laptop, PC, etc.).
 - **Unibody**: This has several advantages. Firstly, and surprisingly; ergonomics. While the flexibility of a split keyboard is nice, I noticed that over time I would always move both halves of the board close together, deciding subconsciously that the most comfortable typing position was to bring both hands close together but to angle inwards at the elbows. With that in mind, keeping the keyboard split has no benefit to me, and if anything, just adds to the untidiness (the cable to connect the halves is always unsightly and unmanageable), and fragility of the board. Secondly, a unibody design allows for a single large battery, meaning less time needed with wires. Finally, building a unibody keyboard from scratch is much simpler than building a custom split board.
